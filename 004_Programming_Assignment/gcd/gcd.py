@@ -10,7 +10,17 @@ def gcd_naive(a, b):
 
     return current_gcd
 
+'''
+gdc_euclid takes two integers where a > b
+returns Greatest Common Divisor
+'''
+def gcd_euclid(a, b):
+  if b == 0:
+     return a
+  rem = a % b # a'    
+  return gcd_euclid(b, rem)
+
 if __name__ == "__main__":
     input = sys.stdin.read()
     a, b = map(int, input.split())
-    print(gcd_naive(a, b))
+    print(gcd_euclid(a, b))
